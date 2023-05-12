@@ -1,4 +1,11 @@
 # https://github.com/espressif/esp-idf-ci-action
+name: Compile ESP-IDF
+
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   build:
 
@@ -15,3 +22,4 @@ jobs:
         esp_idf_version: v4.4
         target: esp32
         path: 'esp32-hello'
+
