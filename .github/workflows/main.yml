@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v2
-    - name: esp-idf build
-      uses: espressif/esp-idf-ci-action@v1
-      with:
-        esp_idf_version: v4.4
-        target: esp32s2
-        path: 'esp32-hello'
+      - uses: actions/checkout@v2
+      - name: Set up ESP-IDF
+        uses: espressif/setup-esp-idf@v2
+        with:
+          esp-idf-version: latest
+          esp-idf-target: esp32
+      - name: Compile
+        run: idf.py build
