@@ -12,7 +12,7 @@ env:
     APP_NAME: hello
 
 permissions:
-    contentes: write
+    contents: write
 
 jobs:
   build:
